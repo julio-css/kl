@@ -1,0 +1,133 @@
+-- Banco de dados da atividade: Super Techyny
+-- Script do roteiro U2_A4 (corrigido: aspas do campo NOME na tabela cliente)
+
+-- Estrutura da tabela categoria
+CREATE TABLE IF NOT EXISTS `categoria` (
+ `IDCATEGORIA` int(11) NOT NULL,
+ `DESCRICAO` varchar(255) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+INSERT INTO `categoria` (`IDCATEGORIA`, `DESCRICAO`) VALUES
+(1, 'Achocolatado');
+
+-- Estrutura da tabela cliente
+CREATE TABLE IF NOT EXISTS `cliente` (
+ `IDCLI` int(10) NOT NULL,
+ `NOME` varchar(255) NOT NULL,
+ `LOGIN` varchar(255) NOT NULL,
+ `SENHA` varchar(255) NOT NULL,
+ `DTNASC` date NOT NULL,
+ `ENDERECO` varchar(255) NOT NULL,
+ `SEXO` int(1) NOT NULL,
+ `CPF` varchar(20) NOT NULL,
+ `RG` varchar(20) NOT NULL,
+ `TELEFONE` varchar(20) NOT NULL,
+ `CELULAR` varchar(20) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+INSERT INTO `cliente` (`IDCLI`, `NOME`, `LOGIN`, `SENHA`, `DTNASC`, `ENDERECO`, `SEXO`, `CPF`, `RG`, `TELEFONE`, `CELULAR`) VALUES
+(1, 'Klaus Gustavo da Silva Alves', 'aluno', '123456', '1983-07-02', 'Rua Tiradentes', 1, '225.962.590-87', '40.252.991-1', '(43)3333-3333', '(43)3344-3344');
+
+-- Estrutura da tabela fornecedor
+CREATE TABLE IF NOT EXISTS `fornecedor` (
+ `IDFOR` int(10) NOT NULL,
+ `NOME` varchar(255) NOT NULL,
+ `TELEFONE` varchar(255) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+INSERT INTO `fornecedor` (`IDFOR`, `NOME`, `TELEFONE`) VALUES
+(1, 'Unopar', '(43)3333-3333');
+
+-- Estrutura da tabela itempedido
+CREATE TABLE IF NOT EXISTS `itempedido` (
+ `IDITEM` int(11) NOT NULL,
+ `IDPED` int(11) NOT NULL,
+ `IDPROD` int(11) NOT NULL,
+ `SEQ` int(11) NOT NULL,
+ `QTDE` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
+
+INSERT INTO `itempedido` (`IDITEM`, `IDPED`, `IDPROD`, `SEQ`, `QTDE`) VALUES
+(37, 50, 1, 1, 2),
+(38, 50, 2, 2, 1),
+(39, 51, 1, 1, 3),
+(40, 51, 2, 2, 3),
+(41, 52, 1, 1, 2);
+
+-- Estrutura da tabela marca
+CREATE TABLE IF NOT EXISTS `marca` (
+ `IDMARCA` int(11) NOT NULL,
+ `DESCRICAO` varchar(255) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+INSERT INTO `marca` (`IDMARCA`, `DESCRICAO`) VALUES
+(1, 'Native'),
+(2, 'Nestle');
+
+-- Estrutura da tabela pedido
+CREATE TABLE IF NOT EXISTS `pedido` (
+ `IDPED` int(11) NOT NULL,
+ `IDCLI` int(11) NOT NULL,
+ `IDFOR` int(11) NOT NULL,
+ `DATA` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ `STATUS` char(1) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=latin1;
+
+INSERT INTO `pedido` (`IDPED`, `IDCLI`, `IDFOR`, `DATA`, `STATUS`) VALUES
+(50, 1, 1, '2021-09-29 08:34:20', 'E'),
+(51, 1, 1, '2021-09-30 12:05:28', 'E'),
+(52, 1, 1, '2021-09-30 12:06:47', 'E');
+
+-- Estrutura da tabela produtos
+CREATE TABLE IF NOT EXISTS `produtos` (
+ `IDPROD` int(10) NOT NULL,
+ `IDCATEGORIA` int(10) NOT NULL,
+ `IDMARCA` int(10) NOT NULL,
+ `NOME` varchar(255) NOT NULL,
+ `DESCRICAO` varchar(255) NOT NULL,
+ `ESTOQUE` int(10) NOT NULL,
+ `PRECO` double NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+INSERT INTO `produtos` (`IDPROD`, `IDCATEGORIA`, `IDMARCA`, `NOME`, `DESCRICAO`, `ESTOQUE`, `PRECO`) VALUES
+(1, 1, 2, 'Nescau', 'Achocolatado em pó', 2, 20.3),
+(2, 1, 1, 'Cereal', 'Cereal nutritivo', 17, 10.35),
+(3, 1, 1, 'Biscoito', 'Biscoito Bono', 50, 2.00);
+
+-- Chaves primarias e indices
+ALTER TABLE `categoria` ADD PRIMARY KEY (`IDCATEGORIA`);
+ALTER TABLE `cliente` ADD PRIMARY KEY (`IDCLI`);
+ALTER TABLE `fornecedor` ADD PRIMARY KEY (`IDFOR`);
+ALTER TABLE `itempedido`
+ ADD PRIMARY KEY (`IDITEM`,`IDPED`),
+ ADD KEY `IDPED` (`IDPED`),
+ ADD KEY `IDPROD` (`IDPROD`);
+ALTER TABLE `marca` ADD PRIMARY KEY (`IDMARCA`);
+ALTER TABLE `pedido`
+ ADD PRIMARY KEY (`IDPED`),
+ ADD KEY `IDCLI` (`IDCLI`),
+ ADD KEY `IDFOR` (`IDFOR`);
+ALTER TABLE `produtos`
+ ADD PRIMARY KEY (`IDPROD`,`IDCATEGORIA`,`IDMARCA`),
+ ADD KEY `IDCATEGORIA` (`IDCATEGORIA`),
+ ADD KEY `IDMARCA` (`IDMARCA`);
+
+-- AUTO_INCREMENT
+ALTER TABLE `categoria` MODIFY `IDCATEGORIA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `cliente` MODIFY `IDCLI` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `fornecedor` MODIFY `IDFOR` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `itempedido` MODIFY `IDITEM` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+ALTER TABLE `marca` MODIFY `IDMARCA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `pedido` MODIFY `IDPED` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+ALTER TABLE `produtos` MODIFY `IDPROD` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+-- Chaves estrangeiras
+ALTER TABLE `itempedido`
+ ADD CONSTRAINT `itempedido_ibfk_1` FOREIGN KEY (`IDPED`) REFERENCES `pedido` (`IDPED`),
+ ADD CONSTRAINT `itempedido_ibfk_2` FOREIGN KEY (`IDPROD`) REFERENCES `produtos` (`IDPROD`);
+ALTER TABLE `pedido`
+ ADD CONSTRAINT `pedido_ibfk_1` FOREIGN KEY (`IDCLI`) REFERENCES `cliente` (`IDCLI`),
+ ADD CONSTRAINT `pedido_ibfk_2` FOREIGN KEY (`IDFOR`) REFERENCES `fornecedor` (`IDFOR`);
+ALTER TABLE `produtos`
+ ADD CONSTRAINT `produtos_ibfk_1` FOREIGN KEY (`IDCATEGORIA`) REFERENCES `categoria` (`IDCATEGORIA`),
+ ADD CONSTRAINT `produtos_ibfk_2` FOREIGN KEY (`IDMARCA`) REFERENCES `marca` (`IDMARCA`);
