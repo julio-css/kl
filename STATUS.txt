@@ -1,0 +1,97 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                         STATUS DO PROJETO                                  ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+DATA: 19 de setembro de 2026, 22:53
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ CONCLUÍDO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Dados pessoais coletados e salvos em dados.json:
+   • Instituição: Universidade Anhanguera
+   • Curso: Análise e Desenvolvimento de Sistemas
+   • RA: 2025239225
+   • Professor: Patrícia Valério Martinez
+   • Polo: EAD
+   • Cidade: Londrina
+   • Data de Entrega: 19 de setembro de 2026
+   • SO: Linux
+   • Data de Acesso Referências: 15 set. 2026
+
+2. Backup de todos os 4 documentos criado em ./relatorios/backup/
+
+3. Campos amarelos substituídos em todos os 4 .docx:
+   ✓ Relatorio_U1_A3_Modelos_de_Implantacao_CloudSim.docx
+   ✓ Relatorio_U2_A4_Gerenciamento_de_Dados_MySQL_InfinityFree.docx
+   ✓ Relatorio_U3_A3_Migracao_de_Aplicacao_Google_Drive.docx
+   ✓ Relatorio_U4_A3_Seguranca_e_Privacidade_SSL_InfinityFree.docx
+
+4. Pastas de prints criadas:
+   ✓ ./prints/U1/
+   ✓ ./prints/U2/
+   ✓ ./prints/U3/
+   ✓ ./prints/U4/
+
+5. Script de automação criado:
+   ✓ ./processar_prints.py (pronto para inserir imagens)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⏳ AGUARDANDO - AÇÃO NECESSÁRIA DE VOCÊ
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+U1 - NetBeans/CloudSim (8 figuras)
+   ⏳ Pendente: Você instala NetBeans, JDK, CloudSim e captura 8 prints
+   📁 Salvar em: ./prints/U1/fig01.png até fig08.png
+
+U3 - Google Drive (8 figuras) ⭐ COMECE AQUI
+   ⏳ Pendente: Você abre Google Drive e captura 8 prints
+   📁 Salvar em: ./prints/U3/fig01.png até fig08.png
+   💡 Mais rápido - não precisa instalar nada
+
+U2 - InfinityFree MySQL (5 figuras)
+   ⏳ Pendente: Você cria conta InfinityFree, confirma email, cria BD MySQL
+   📁 Depois: Eu automatizo phpMyAdmin com Playwright
+   📁 Salvar em: ./prints/U2/fig01.png até fig05.png
+
+U4 - InfinityFree SSL (8 figuras)
+   ⏳ Pendente: Você cria conta InfinityFree, confirma email, cria subdomínio
+   📁 Depois: Eu automatizo SSL + .htaccess com Playwright
+   📁 Salvar em: ./prints/U4/fig01.png até fig08.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🤖 PRÓXIMA AÇÃO AUTOMÁTICA (MINHA)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Quando você avisar que tem prints prontos:
+
+1. Executar: python3 processar_prints.py
+   → Insere todas as imagens nos documentos
+   → Remove os quadros amarelos [COLAR AQUI O PRINT N]
+
+2. Para U2 e U4: Automatizar com Playwright
+   → Abrir phpMyAdmin, executar script SQL (U2)
+   → Solicitar SSL, CNAME, instalar certificado, .htaccess (U4)
+
+3. Converter para PDF com LibreOffice:
+   soffice --headless --convert-to pdf *.docx
+   → Salvar em ./entrega/
+
+4. Verificação final:
+   → Conferir se não há campos amarelos restantes
+   → Validar imagens legíveis e sem cortes
+   → Validar nomes e dados consistentes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📋 PRÓXIMOS PASSOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Comece com U3 (Google Drive) - 15 minutos
+2. Depois U1 (NetBeans) em paralelo - 30 minutos
+3. Crie conta InfinityFree (registra 2 contas para U2 e U4)
+4. Avise quando tiver os prints prontos
+5. Eu faço o resto automaticamente
+
+📞 Quando estiver pronto, diga: "Tenho os prints de U1/U2/U3/U4"
+
+╚════════════════════════════════════════════════════════════════════════════╝

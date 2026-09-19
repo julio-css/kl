@@ -1,0 +1,75 @@
+================================================================================
+GUIA DE PRINTS - O QUE CAPTURAR
+================================================================================
+
+U1 (NetBeans/CloudSim) - 8 FIGURAS
+────────────────────────────────────
+Fig 1: NetBeans instalado e em execução
+Fig 2: Página de download do JDK
+Fig 3: Página do CloudSim
+Fig 4: Criação do projeto "Redes"
+Fig 5: Exemplo CloudSimExample1.java no projeto
+Fig 6: Pasta C:\JAVA com os arquivos descompactados
+Fig 7: Biblioteca do projeto com o JAR do CloudSim
+Fig 8: Saída da execução do CloudSimExample1
+
+Salvar em: ./prints/U1/fig01.png até fig08.png
+
+────────────────────────────────────────────────────────────────────────────
+
+U2 (InfinityFree MySQL) - 5 FIGURAS
+────────────────────────────────────
+Fig 1: Tela de cadastro no InfinityFree
+Fig 2: Conta criada e painel de controle
+Fig 3: Criação do banco de dados MySQL
+Fig 4: Script SQL executado no phpMyAdmin
+Fig 5: Tabelas criadas no banco de dados
+
+Salvar em: ./prints/U2/fig01.png até fig05.png
+
+AÇÃO NECESSÁRIA: Você cria a conta InfinityFree e confirma email
+Depois eu automatizo o phpMyAdmin com Playwright
+
+────────────────────────────────────────────────────────────────────────────
+
+U3 (Google Drive) - 8 FIGURAS
+────────────────────────────────────
+Fig 1: Tela inicial do Google Drive
+Fig 2: Menu "Novo" do Google Drive
+Fig 3: Documento criado no Google Docs
+Fig 4: Pasta e subpastas no Drive
+Fig 5: Janela de compartilhamento
+Fig 6: Planilha com edição simultânea
+Fig 7: Formulário criado no Google Forms
+Fig 8: Respostas coletadas no Google Sheets
+
+Salvar em: ./prints/U3/fig01.png até fig08.png
+
+────────────────────────────────────────────────────────────────────────────
+
+U4 (InfinityFree SSL) - 8 FIGURAS
+────────────────────────────────────
+Fig 1: Cadastro no InfinityFree
+Fig 2: Site criado no InfinityFree
+Fig 3: Solicitação da ordem do certificado (Create Order)
+Fig 4: Registro CNAME e status da validação
+Fig 5: Certificado SSL instalado
+Fig 6: Arquivo .htaccess editado
+Fig 7: Site acessado por HTTPS
+Fig 8: Detalhes do certificado no navegador
+
+Salvar em: ./prints/U4/fig01.png até fig08.png
+
+AÇÃO NECESSÁRIA: Você cria a conta InfinityFree, confirma email e subdomínio
+Depois eu automatizo com Playwright para SSL e .htaccess
+
+================================================================================
+PRÓXIMOS PASSOS
+================================================================================
+
+1. Comece com U3 (Google Drive) - é 100% manual e sem dependências
+2. Depois U1 (NetBeans/CloudSim)
+3. Crie conta InfinityFree para U2 e U4
+4. Eu faço a automação do phpMyAdmin (U2) e SSL (U4)
+
+================================================================================
